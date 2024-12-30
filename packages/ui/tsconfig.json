@@ -1,0 +1,3 @@
+{
+  "extends": "@reclaim/tsconfig/tsconfig-react"
+}
