@@ -7,8 +7,8 @@
     "incremental": false,
 
     /* Language and Environment */
-    "target": "ES2023",
-    "lib": ["ES2023"],
+    "target": "ES2024",
+    "lib": ["ES2024"],
     "moduleDetection": "force",
 
     /* Modules */

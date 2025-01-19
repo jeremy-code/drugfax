@@ -1,12 +1,15 @@
+"use client";
+
 import type { ComponentPropsWithRef } from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
+import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { Slottable } from "@radix-ui/react-slot";
 
 import { cn } from "@reclaim/ui/utils";
 
-export const { Item: NavigationMenuItem, Link: NavigationMenuLink } =
-  NavigationMenuPrimitive;
+export const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 export const NavigationMenu = ({
   className,
@@ -14,50 +17,80 @@ export const NavigationMenu = ({
   ...props
 }: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Root>) => (
   <NavigationMenuPrimitive.Root
-    className={cn(
-      "relative z-[1] flex w-screen justify-center",
-      // "relative z-10 flex max-w-max flex-1 items-center justify-center",
-      className,
-    )}
+    className={cn("relative z-10 flex grow justify-center", className)}
     {...props}
   >
-    {children}
+    <Slottable>{children}</Slottable>
     <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
 );
 
-export const NavigationMenuList = (
-  props: ComponentPropsWithRef<typeof NavigationMenuPrimitive.List>,
-) => (
+export const NavigationMenuList = ({
+  className,
+  children,
+  ...props
+}: ComponentPropsWithRef<typeof NavigationMenuPrimitive.List>) => (
   <NavigationMenuPrimitive.List
-    // className="group flex flex-1 list-none items-center justify-center space-x-1"
-    className="m-0 flex list-none justify-center rounded-md p-1 shadow-sm"
+    className={cn("m-0 flex justify-center gap-4 rounded-md p-1", className)}
     {...props}
-  />
+  >
+    <Slottable>{children}</Slottable>
+    <NavigationMenuIndicator />
+  </NavigationMenuPrimitive.List>
 );
 
-const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+export const navigationMenuTriggerVariants = cva(
+  [
+    "select-none rounded px-4 py-3 text-sm/none font-medium text-foreground outline-none transition-colors",
+    "hover:bg-accent hover:text-accent-foreground",
+    "focus:bg-accent focus:text-accent-foreground focus:ring-2 focus:ring-offset-2 focus:ring-offset-background",
+    "disabled:pointer-events-none disabled:opacity-50",
+  ],
+  {
+    variants: {
+      variant: {
+        link: "block text-sm/none no-underline",
+        trigger: "group flex items-center justify-between gap-0.5",
+      },
+    },
+    defaultVariants: { variant: "link" },
+  },
 );
 
 export const NavigationMenuTrigger = ({
   className,
   children,
+  variant = "trigger",
   ...props
-}: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Trigger>) => {
+}: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Trigger> &
+  VariantProps<typeof navigationMenuTriggerVariants>) => {
   return (
     <NavigationMenuPrimitive.Trigger
-      className={cn(navigationMenuTriggerStyle({ className }), "group")}
+      className={cn(
+        navigationMenuTriggerVariants({ className, variant }),
+        "group",
+      )}
       {...props}
     >
-      {children}{" "}
-      <ChevronDown
-        className="relative top-px ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
-        aria-hidden="true"
-      />
+      <Slottable>{children}</Slottable>
+      <AccessibleIcon label="Open menu">
+        <ChevronDown className="relative top-px size-3 transition-transform duration-300 group-radix-state-open:rotate-180" />
+      </AccessibleIcon>
     </NavigationMenuPrimitive.Trigger>
   );
 };
+
+export const NavigationMenuLink = ({
+  className,
+  variant = "link",
+  ...props
+}: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Link> &
+  VariantProps<typeof navigationMenuTriggerVariants>) => (
+  <NavigationMenuPrimitive.Link
+    className={cn(navigationMenuTriggerVariants({ className, variant }))}
+    {...props}
+  />
+);
 
 export const NavigationMenuContent = ({
   className,
@@ -65,7 +98,13 @@ export const NavigationMenuContent = ({
 }: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Content>) => (
   <NavigationMenuPrimitive.Content
     className={cn(
-      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto ",
+      "absolute left-0 top-0 w-full sm:w-auto",
+      "data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in",
+      "data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out",
+      "radix-motion-from-start:slide-in-from-left-52",
+      "radix-motion-from-end:slide-in-from-right-52",
+      "radix-motion-to-start:slide-out-to-left-52",
+      "radix-motion-to-end:slide-out-to-right-52",
       className,
     )}
     {...props}
@@ -76,10 +115,15 @@ export const NavigationMenuViewport = ({
   className,
   ...props
 }: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Viewport>) => (
-  <div className={cn("absolute left-0 top-full flex justify-center")}>
+  <div className="absolute left-0 top-full flex w-full justify-center">
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+        "relative mt-2.5 w-full origin-[top_center] overflow-hidden rounded-md bg-popover transition-size",
+        // Using `box-shadow` to simulate border, so it lines up with <NavigationMenuIndicator />'s arrow
+        "shadow-[0_0_0_1px] shadow-border",
+        "h-radix-navigation-menu-viewport sm:w-radix-navigation-menu-viewport",
+        "radix-state-open:animate-in radix-state-open:fade-in radix-state-open:zoom-in-90",
+        "radix-state-closed:animate-out radix-state-closed:fade-out radix-state-closed:zoom-out-90",
         className,
       )}
       {...props}
@@ -93,11 +137,13 @@ export const NavigationMenuIndicator = ({
 }: ComponentPropsWithRef<typeof NavigationMenuPrimitive.Indicator>) => (
   <NavigationMenuPrimitive.Indicator
     className={cn(
-      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
+      "top-full z-[1] flex h-2.5 items-end justify-center overflow-hidden transition-[width,transform]",
+      "radix-state-visible:animate-in radix-state-visible:fade-in",
+      "radix-state-hidden:animate-out radix-state-hidden:fade-out",
+      // arrow indicator pseudo-element
+      "after:relative after:top-1/2 after:size-2.5 after:rotate-45 after:rounded-tl-sm after:border after:bg-popover",
       className,
     )}
     {...props}
-  >
-    <div className="relative top-[60%] size-2 rotate-45 rounded-tl-sm shadow-md" />
-  </NavigationMenuPrimitive.Indicator>
+  />
 );

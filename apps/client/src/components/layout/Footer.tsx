@@ -1,5 +1,5 @@
-import { cn } from "@reclaim/ui/utils";
 import type { ComponentPropsWithRef } from "react";
+import { cn } from "@reclaim/ui/utils";
 
 export const Footer = ({
   className,

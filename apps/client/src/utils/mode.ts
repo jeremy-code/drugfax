@@ -9,11 +9,15 @@ export const mode = <T>(values: T[]) => {
     return undefined;
   }
 
-  const counts = values.reduce(
-    (acc, value) => acc.set(value, (acc.get(value) ?? 0) + 1),
-    new Map<T, number>(),
+  const { counts, maxCount } = values.reduce(
+    ({ counts, maxCount }, value) => {
+      const count = (counts.get(value) ?? 0) + 1;
+      counts.set(value, count);
+
+      return { counts, maxCount: Math.max(maxCount, count) };
+    },
+    { counts: new Map<T, number>(), maxCount: 0 },
   );
-  const maxCount = Math.max(...counts.values());
 
   return (
     Array.from(counts).find(([, count]) => count === maxCount) as [T, number]

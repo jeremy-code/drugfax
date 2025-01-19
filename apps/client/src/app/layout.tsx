@@ -1,8 +1,8 @@
 import "@reclaim/ui/globals.css";
 
 import type { ReactNode } from "react";
-import { Lexend } from "next/font/google";
 import type { Metadata } from "next";
+import { Lexend } from "next/font/google";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import { AppProvider } from "./_components/AppProvider";

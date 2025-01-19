@@ -26,9 +26,9 @@ export const ScrollBar = ({
 }: ComponentPropsWithRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     className={cn(
-      "flex touch-none select-none bg-muted/50 p-[2px] transition-[background] hover:bg-muted/80",
-      "radix-orientation-vertical:w-[10px]",
-      "radix-orientation-horizontal:h-[10px] radix-orientation-horizontal:flex-col",
+      "flex touch-none select-none bg-muted/50 p-0.5 transition-colors hover:bg-muted/80",
+      "radix-orientation-vertical:w-2.5",
+      "radix-orientation-horizontal:h-2.5 radix-orientation-horizontal:flex-col",
       className,
     )}
     {...props}

@@ -1,4 +1,5 @@
 import { Button } from "@reclaim/ui/components/ui/button";
+import { Checkbox } from "@reclaim/ui/components/ui/checkbox";
 
 const Home = () => {
   return (
@@ -19,9 +20,12 @@ const Home = () => {
         </div>
       </div>
       <div>
-        In 2024, approximentally 23.21% of preauthorization claims were denied.
+        In 2023, approximentally 23.21% of preauthorization claims were denied.
         Of those, 0.16% were appealed. However, of those appeals filed, 40.35%
         were overturned in favor of the patient.
+      </div>
+      <div>
+        <Checkbox />
       </div>
     </>
   );

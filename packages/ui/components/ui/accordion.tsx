@@ -1,5 +1,3 @@
-"use client";
-
 import type { ComponentPropsWithRef } from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
@@ -36,7 +34,7 @@ export const AccordionTrigger = ({
   <AccordionPrimitive.Header className="flex max-w-[unset]">
     <AccordionPrimitive.Trigger
       className={cn(
-        "group flex flex-1 items-center justify-between px-5 py-4 text-sm font-medium transition-[background] hover:bg-muted/50 ",
+        "group flex flex-1 items-center justify-between px-5 py-4 text-sm font-medium transition-colors hover:bg-muted/50 ",
         "radix-disabled:cursor-not-allowed radix-disabled:opacity-50 radix-disabled:hover:bg-transparent",
         className,
       )}
@@ -59,6 +57,8 @@ export const AccordionContent = ({
     className="overflow-hidden bg-muted text-sm radix-state-closed:animate-accordion-up radix-state-open:animate-accordion-down"
     {...props}
   >
-    <div className={cn("px-5 py-4", className)}>{children}</div>
+    <div className={cn("px-5 py-4", className)}>
+      <Slottable>{children}</Slottable>
+    </div>
   </AccordionPrimitive.Content>
 );

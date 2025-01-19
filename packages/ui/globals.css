@@ -21,9 +21,9 @@
     --accent-foreground: 222.2 47.4% 11.2%;    /* slate.900 */
     --destructive: 0 84.2% 60.2%;              /* red.500 */
     --destructive-foreground: 210 40% 98%;     /* slate.50 */
-    --border: 214.3 31.8% 91.4%;               /* slate.200 */
+    --border: 212.7 26.8% 83.9%;               /* slate.300 */
     --input: 214.3 31.8% 91.4%;                /* slate.200 */
-    --ring: 222.2 84% 4.9%;                    /* slate.950 */
+    --ring: 217.2 91.2% 59.8%;                 /* blue.500 */
   }
 
   /* prettier-ignore */
@@ -42,15 +42,15 @@
     --accent-foreground: 210 40% 98%;        /* slate.50 */
     --destructive: 0 62.8% 30.6%;            /* red.900 */
     --destructive-foreground: 210 40% 98%;   /* slate.50 */
-    --border: 217.2 32.6% 17.5%;             /* slate.800 */
+    --border: 215.3,25%,26.7%;               /* slate.800 */
     --input: 217.2 32.6% 17.5%;              /* slate.800 */
-    --ring: 212.7 26.8% 83.9%;               /* slate.300 */
+    --ring: 213.1 93.9% 67.8%;               /* blue.400 */
   }
 }
 
 @layer base {
   html {
-    @apply antialiased;
+    @apply antialiased [interpolate-size:allow-keywords] [text-size-adjust:none];
   }
 
   body {
@@ -69,8 +69,16 @@
     @apply text-balance max-w-[25ch];
   }
 
-  :where(p, dd, li) {
+  :where(p, dd, li, figcaption) {
     @apply text-pretty max-w-prose;
+  }
+
+  textarea:not([rows]) {
+    @apply min-h-[10em];
+  }
+
+  :where(td, math, time[datetime*=":"]) {
+    @apply tabular-nums lining-nums;
   }
 
   @media (prefers-reduced-motion: no-preference) {

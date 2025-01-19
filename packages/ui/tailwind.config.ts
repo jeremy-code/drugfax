@@ -34,6 +34,7 @@ const uiConfig: PresetsConfig = {
         gray: colors.slate,
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        border: "hsl(var(--border))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -81,6 +82,9 @@ const uiConfig: PresetsConfig = {
       },
       ringColor: { DEFAULT: "hsl(var(--ring))" },
       ringOffsetColor: { DEFAULT: "hsl(var(--background))" },
+      transitionProperty: {
+        size: "width, height",
+      },
     },
   },
   plugins: [animate, radix({ variantPrefix: "radix" }), typography],

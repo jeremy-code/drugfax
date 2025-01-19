@@ -1,0 +1,115 @@
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import { ChevronRight, MoreHorizontal } from "lucide-react";
+import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
+import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import type { ReactNode } from "react";
+
+import { cn } from "@reclaim/ui/utils";
+
+export const Breadcrumb = ({
+  asChild,
+  ...props
+}: PrimitivePropsWithRef<"nav">) => {
+  const Comp = asChild ? Slot : "nav";
+
+  return <Comp aria-label="breadcrumb" {...props} />;
+};
+
+export const BreadcrumbList = ({
+  asChild,
+  className,
+  ...props
+}: PrimitivePropsWithRef<"ol">) => {
+  const Comp = asChild ? Slot : "ol";
+
+  return (
+    <Comp
+      className={cn(
+        "flex items-center gap-1.5 break-words text-sm/5 text-muted-foreground",
+        className,
+      )}
+      {...props}
+    />
+  );
+};
+
+export const BreadcrumbItem = ({
+  asChild,
+  className,
+  separator,
+  ...props
+}: PrimitivePropsWithRef<"li"> & { separator?: ReactNode }) => {
+  const Comp = asChild ? Slot : "li";
+  const Separator = separator === undefined ? ChevronRight : Slot;
+
+  return (
+    <>
+      <Comp className={cn("inline-flex items-center", className)} {...props} />
+      <li className="text-muted-foreground/80 last:hidden">
+        <Separator className="size-3.5">
+          <Slottable>{separator}</Slottable>
+        </Separator>
+      </li>
+    </>
+  );
+};
+
+export const BreadcrumbLink = ({
+  asChild,
+  className,
+  ...props
+}: PrimitivePropsWithRef<"a">) => {
+  const Comp = asChild ? Slot : "a";
+
+  return (
+    <Comp
+      className={cn(
+        "inline-flex items-center gap-2 rounded-sm text-muted-foreground no-underline outline-0 transition-[color,background-color,box-shadow]",
+        "hover:text-gray-700 dark:hover:text-gray-200",
+        "focus:outline-none focus:ring-2 focus:ring-offset-2",
+        className,
+      )}
+      {...props}
+    />
+  );
+};
+
+export const BreadcrumbCurrentLink = ({
+  asChild,
+  className,
+  ...props
+}: PrimitivePropsWithRef<"span">) => {
+  const Comp = asChild ? Slot : "span";
+
+  return (
+    <Comp
+      role="link"
+      aria-current="page"
+      className={cn("text-foreground", className)}
+      {...props}
+    />
+  );
+};
+
+export const BreadcrumbEllipsis = ({
+  className,
+  asChild,
+  children,
+  ...props
+}: PrimitivePropsWithRef<"span">) => {
+  const Comp = asChild ? Slot : "span";
+
+  return (
+    <Comp
+      role="presentation"
+      aria-hidden="true"
+      className={cn("flex size-9 items-center justify-center", className)}
+      {...props}
+    >
+      <AccessibleIcon label="more">
+        <MoreHorizontal className="size-4" />
+      </AccessibleIcon>
+      <Slottable>{children}</Slottable>
+    </Comp>
+  );
+};

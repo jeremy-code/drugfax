@@ -7,7 +7,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main className="container py-8">{children}</main>
+      {children}
       <Footer />
     </>
   );

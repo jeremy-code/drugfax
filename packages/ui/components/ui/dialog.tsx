@@ -45,7 +45,7 @@ export const DialogContent = ({
         {...props}
       >
         {children}
-        <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none radix-state-open:bg-accent radix-state-open:text-muted-foreground">
+        <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none radix-state-open:bg-accent radix-state-open:text-muted-foreground">
           <AccessibleIcon label="Close">
             <X className="size-4" />
           </AccessibleIcon>
@@ -92,10 +92,7 @@ export const DialogTitle = ({
 }: ComponentPropsWithRef<"h2">) => {
   return (
     <h2
-      className={cn(
-        "text-lg font-semibold leading-none tracking-tight",
-        className,
-      )}
+      className={cn("text-lg/none font-semibold tracking-tight", className)}
       {...props}
     >
       {children}

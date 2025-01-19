@@ -44,6 +44,10 @@ export default tseslint.config(
           },
         },
       ],
+      /**
+       * Server actions must be async functions, even if they don't use `await`.
+       */
+      "@typescript-eslint/require-await": "off",
       "react-compiler/react-compiler": "error",
     },
     languageOptions: {

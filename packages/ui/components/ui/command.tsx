@@ -46,7 +46,7 @@ export const CommandList = ({
 }: ComponentPropsWithRef<typeof CommandPrimitive.List>) => (
   <CommandPrimitive.List
     className={cn(
-      "h-[min(theme(space.80),var(--cmdk-list-height)+1rem)] max-h-96 overflow-auto overscroll-contain p-2 transition-[height_100ms_ease]",
+      "h-[min(theme(space.80),var(--cmdk-list-height)+1rem)] max-h-96 overflow-auto overscroll-contain p-2 transition-size",
       "[&>[cmdk-list-sizer]>:not([hidden])+[cmdk-group]]:mt-2", // Every group except the first (and CommandEmpty) have a top margin
       className,
     )}
@@ -108,10 +108,10 @@ export const CommandItem = ({
 }) => (
   <CommandPrimitive.Item
     className={cn(
-      "flex h-12 cursor-pointer select-none items-center gap-2 rounded-lg px-4 transition-[none_150ms_ease] will-change-[background,color]",
+      "flex h-12 cursor-pointer select-none items-center gap-2 rounded-lg px-4 transition-[none_150ms_ease]",
       "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
       "data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50",
-      "active:transition-[background]",
+      "active:transition-colors",
       "[&+[cmdk-item]]:mt-1",
       "[&_svg]:size-4",
       className,
@@ -137,7 +137,7 @@ export const CommandShortcut = ({
   return (
     <kbd
       className={cn(
-        "inline-flex h-5 min-w-5 items-center justify-center rounded-[4px] bg-gray-200 p-1 text-xs uppercase text-gray-900 dark:bg-gray-900 dark:text-gray-200",
+        "inline-flex h-5 min-w-5 items-center justify-center rounded bg-gray-200 p-1 text-xs uppercase text-gray-900 dark:bg-gray-900 dark:text-gray-200",
         className,
       )}
       {...props}

@@ -1,54 +1,89 @@
-import type { ComponentPropsWithRef } from "react";
+import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
+import { Slot } from "@radix-ui/react-slot";
 
 import { cn } from "@reclaim/ui/utils";
 
-export const Card = ({ className, ...props }: ComponentPropsWithRef<"div">) => (
-  <div
-    className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow-sm",
-      className,
-    )}
-    {...props}
-  />
-);
+export const Card = ({
+  className,
+  asChild,
+  ...props
+}: PrimitivePropsWithRef<"div">) => {
+  const Comp = asChild ? Slot : "div";
+
+  return (
+    <Comp
+      className={cn(
+        "rounded-lg border bg-card text-card-foreground shadow-sm",
+        className,
+      )}
+      {...props}
+    />
+  );
+};
 
 export const CardHeader = ({
   className,
+  asChild,
   ...props
-}: ComponentPropsWithRef<"div">) => (
-  <div className={cn("flex flex-col space-y-1.5 p-6", className)} {...props} />
-);
+}: PrimitivePropsWithRef<"div">) => {
+  const Comp = asChild ? Slot : "div";
+
+  return (
+    <Comp
+      className={cn("flex flex-col space-y-1.5 p-6", className)}
+      {...props}
+    />
+  );
+};
 
 export const CardTitle = ({
   className,
-  children,
+  asChild,
   ...props
-}: ComponentPropsWithRef<"h3">) => (
-  <h3
-    className={cn("font-semibold leading-none tracking-tight", className)}
-    {...props}
-  >
-    {children}
-  </h3>
-);
+}: PrimitivePropsWithRef<"h3">) => {
+  const Comp = asChild ? Slot : "h1";
+
+  return (
+    <Comp
+      className={cn("font-semibold leading-none tracking-tight", className)}
+      {...props}
+    />
+  );
+};
 
 export const CardDescription = ({
   className,
+  asChild,
   ...props
-}: ComponentPropsWithRef<"p">) => (
-  <p className={cn("text-sm text-muted-foreground", className)} {...props} />
-);
+}: PrimitivePropsWithRef<"p">) => {
+  const Comp = asChild ? Slot : "p";
+
+  return (
+    <Comp
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  );
+};
 
 export const CardContent = ({
   className,
+  asChild,
   ...props
-}: ComponentPropsWithRef<"div">) => (
-  <div className={cn("p-6 pt-0", className)} {...props} />
-);
+}: PrimitivePropsWithRef<"div">) => {
+  const Comp = asChild ? Slot : "div";
+
+  return <Comp className={cn("p-6 pt-0", className)} {...props} />;
+};
 
 export const CardFooter = ({
   className,
+  asChild,
   ...props
-}: ComponentPropsWithRef<"div">) => (
-  <div className={cn("flex items-center p-6 pt-0", className)} {...props} />
-);
+}: PrimitivePropsWithRef<"div">) => {
+  const Comp = asChild ? Slot : "div";
+
+  return (
+    <Comp className={cn("flex items-center p-6 pt-0", className)} {...props} />
+  );
+};
