@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef } from "react";
 import Link from "next/link";
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,7 +8,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@reclaim/ui/components/ui/navigation-menu";
+} from "@drugfax/ui/components/ui/navigation-menu";
 
 import { ThemeToggle } from "#components/misc/ThemeToggle";
 import { Logo } from "#components/misc/Logo";
@@ -23,7 +23,7 @@ export const Navbar = ({
         <Link className="flex items-center gap-2 font-semibold" href="/">
           {/* spacing.6 = 1.5rem (24px) aligns with line height */}
           <Logo className="size-[1lh]" />
-          Reclaim
+          DrugFax
         </Link>
 
         <NavigationMenu className="grow">

@@ -4,8 +4,8 @@ import type { ComponentPropsWithRef } from "react";
 import { AccessibleIcon } from "radix-ui";
 import { Moon, RefreshCw, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { SwitchRoot, SwitchThumb } from "@reclaim/ui/components/ui/switch";
-import { cn } from "@reclaim/ui/utils";
+import { SwitchRoot, SwitchThumb } from "@drugfax/ui/components/ui/switch";
+import { cn } from "@drugfax/ui/utils";
 
 import { useIsMounted } from "#hooks/useIsMounted";
 

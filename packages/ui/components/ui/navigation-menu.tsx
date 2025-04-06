@@ -9,7 +9,7 @@ import {
 import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const NavigationMenuItem = NavigationMenuPrimitive.Item;
 

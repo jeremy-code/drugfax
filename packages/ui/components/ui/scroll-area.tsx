@@ -1,7 +1,7 @@
 import { ScrollArea as ScrollAreaPrimitive } from "radix-ui";
 import type { ComponentPropsWithRef } from "react";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const ScrollArea = ({
   className,

@@ -10,7 +10,7 @@
   "rsc": true,
   "tsx": true,
   "aliases": {
-    "utils": "@reclaim/ui/utils",
-    "components": "@reclaim/ui/components"
+    "utils": "@drugfax/ui/utils",
+    "components": "@drugfax/ui/components"
   }
 }

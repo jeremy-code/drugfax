@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
 import Image, { type ImageProps } from "next/image";
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export type ThemeImageProps = Omit<
   ComponentPropsWithoutRef<typeof Image>,

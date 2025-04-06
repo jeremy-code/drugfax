@@ -1,4 +1,4 @@
-import "@reclaim/ui/globals.css";
+import "@drugfax/ui/globals.css";
 
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
@@ -9,16 +9,16 @@ import { AppProvider } from "./_components/AppProvider";
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reclaim.sh"),
-  title: { default: "Reclaim", template: "%s | Reclaim" },
+  metadataBase: new URL("https://drugfax.io"),
+  title: { default: "DrugFax", template: "%s | DrugFax" },
   description:
-    "Reclaim is a tool to help you get the most out of your health insurance.",
-  applicationName: "Reclaim",
+    "DrugFax is a tool to help you get the most out of your health insurance.",
+  applicationName: "DrugFax",
   authors: { name: "Jeremy Nguyen", url: "https://jeremy.ng" },
-  keywords: ["reclaim", "health", "denial", "insurance"],
+  keywords: ["drugfax", "health", "denial", "insurance"],
   referrer: "origin-when-cross-origin",
   creator: "Jeremy Nguyen",
-  publisher: "Reclaim",
+  publisher: "DrugFax",
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {

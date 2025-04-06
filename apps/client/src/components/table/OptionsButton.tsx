@@ -1,6 +1,6 @@
 import { EllipsisVertical } from "lucide-react";
 import { AccessibleIcon } from "radix-ui";
-import { Button } from "@reclaim/ui/components/ui/button";
+import { Button } from "@drugfax/ui/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@reclaim/ui/components/ui/dropdown-menu";
+} from "@drugfax/ui/components/ui/dropdown-menu";
 import type { Column, RowData } from "@tanstack/react-table";
 
 export const OptionsButton = <TData extends RowData, TValue>({

@@ -1,5 +1,5 @@
-import { Button } from "@reclaim/ui/components/ui/button";
-import { Checkbox } from "@reclaim/ui/components/ui/checkbox";
+import { Button } from "@drugfax/ui/components/ui/button";
+import { Checkbox } from "@drugfax/ui/components/ui/checkbox";
 
 const Home = () => {
   return (

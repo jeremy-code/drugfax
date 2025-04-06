@@ -3,7 +3,7 @@
 import { Popover as PopoverPrimitive } from "radix-ui";
 import type { ComponentPropsWithRef } from "react";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const { Root: Popover, Trigger: PopoverTrigger } = PopoverPrimitive;
 

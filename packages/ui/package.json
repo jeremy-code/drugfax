@@ -1,10 +1,10 @@
 {
-  "name": "@reclaim/ui",
+  "name": "@drugfax/ui",
   "version": "0.0.0",
   "private": true,
   "exports": {
     "./*": {
-      "@reclaim/development": "./*.js",
+      "@drugfax/development": "./*.js",
       "default": "./*"
     }
   },
@@ -21,8 +21,8 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "@reclaim/eslint-config": "workspace:^",
-    "@reclaim/tsconfig": "workspace:*",
+    "@drugfax/eslint-config": "workspace:^",
+    "@drugfax/tsconfig": "workspace:*",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.1.0",
     "autoprefixer": "^10.4.21",

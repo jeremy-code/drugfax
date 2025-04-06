@@ -4,7 +4,7 @@ import type { ComponentPropsWithRef } from "react";
 import { X } from "lucide-react";
 import { AccessibleIcon, Dialog as DialogPrimitive } from "radix-ui";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const {
   Root: Dialog,

@@ -2,7 +2,7 @@ import type { ComponentPropsWithRef } from "react";
 import { Checkbox as CheckboxPrimitive } from "radix-ui";
 import { Check, Minus } from "lucide-react";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const Checkbox = ({
   className,

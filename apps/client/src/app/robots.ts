@@ -5,7 +5,7 @@ const robots = (): MetadataRoute.Robots => ({
     userAgent: "*",
     allow: "/",
   },
-  sitemap: "https://reclaim.sh/sitemap.xml",
+  sitemap: "https://drugfax.io/sitemap.xml",
 });
 
 export default robots;

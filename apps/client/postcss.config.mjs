@@ -1,1 +1,1 @@
-export { default } from "@reclaim/ui/postcss.config.mjs";
+export { default } from "@drugfax/ui/postcss.config.mjs";

@@ -2,8 +2,8 @@ import type { ComponentPropsWithRef } from "react";
 import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 
-import { Separator } from "@reclaim/ui/components/ui/separator";
-import { cn } from "@reclaim/ui/utils";
+import { Separator } from "@drugfax/ui/components/ui/separator";
+import { cn } from "@drugfax/ui/utils";
 
 export const Command = ({
   className,

@@ -1,5 +1,5 @@
 {
-  "name": "@reclaim/eslint-config",
+  "name": "@drugfax/eslint-config",
   "type": "module",
   "version": "0.0.0",
   "private": true,

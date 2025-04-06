@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "turbo run build --filter=@reclaim/client",
+  "buildCommand": "turbo run build --filter=@drugfax/client",
   "devCommand": "next dev --port $PORT",
   "framework": "nextjs",
   "ignoreCommand": "pnpm dlx turbo-ignore --fallback=HEAD^1",

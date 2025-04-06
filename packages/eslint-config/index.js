@@ -34,7 +34,7 @@ export default tseslint.config(
          * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/order.md}
          */
         {
-          pathGroups: [{ pattern: "@reclaim/*", group: "internal" }],
+          pathGroups: [{ pattern: "@drugfax/*", group: "internal" }],
           "newlines-between": "always",
         },
       ],

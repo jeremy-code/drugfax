@@ -1,10 +1,10 @@
 {
-  "name": "@reclaim/client",
+  "name": "@drugfax/client",
   "version": "0.0.0",
   "private": true,
   "imports": {
     "#*": {
-      "@reclaim/development": "./src/*.js",
+      "@drugfax/development": "./src/*.js",
       "default": "./src/*"
     }
   },
@@ -18,7 +18,7 @@
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@next/bundle-analyzer": "^15.2.4",
-    "@reclaim/ui": "workspace:*",
+    "@drugfax/ui": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@tanstack/react-query": "^5.71.10",
     "@tanstack/react-query-devtools": "^5.71.10",
@@ -38,8 +38,8 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@reclaim/eslint-config": "workspace:*",
-    "@reclaim/tsconfig": "workspace:*",
+    "@drugfax/eslint-config": "workspace:*",
+    "@drugfax/tsconfig": "workspace:*",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",

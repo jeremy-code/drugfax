@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
-import { Button } from "@reclaim/ui/components/ui/button";
+import { Button } from "@drugfax/ui/components/ui/button";
 
 import { BackButton } from "./_components/BackButton";
 

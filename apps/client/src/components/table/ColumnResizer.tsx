@@ -1,4 +1,4 @@
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 import { type RowData, type Header as HeaderType } from "@tanstack/react-table";
 import type { CSSProperties } from "react";
 import type { PrimitivePropsWithRef } from "radix-ui/internal";

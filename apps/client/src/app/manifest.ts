@@ -3,8 +3,8 @@ import type { MetadataRoute } from "next";
 import { SIZES } from "./icon1";
 
 const manifest = (): MetadataRoute.Manifest => ({
-  short_name: "reclaim",
-  name: "reclaim",
+  short_name: "drugfax",
+  name: "drugfax",
   icons: [
     {
       src: "/icon.svg",
@@ -20,7 +20,7 @@ const manifest = (): MetadataRoute.Manifest => ({
   background_color: "white",
   display: "standalone",
   theme_color: "hsl(347, 77%, 57%)",
-  description: "reclaim",
+  description: "drugfax",
 });
 
 export default manifest;

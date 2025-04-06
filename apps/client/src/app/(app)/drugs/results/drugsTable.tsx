@@ -18,8 +18,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@reclaim/ui/components/ui/table";
-import { cn } from "@reclaim/ui/utils";
+} from "@drugfax/ui/components/ui/table";
+import { cn } from "@drugfax/ui/utils";
 import {
   ArrowDownWideNarrow,
   ArrowUpNarrowWide,

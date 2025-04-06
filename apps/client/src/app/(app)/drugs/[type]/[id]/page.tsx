@@ -4,16 +4,16 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-} from "@reclaim/ui/components/ui/breadcrumb";
-import { Badge } from "@reclaim/ui/components/ui/badge";
+} from "@drugfax/ui/components/ui/breadcrumb";
+import { Badge } from "@drugfax/ui/components/ui/badge";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "@reclaim/ui/components/ui/card";
+} from "@drugfax/ui/components/ui/card";
 import Link from "next/link";
-import { Button } from "@reclaim/ui/components/ui/button";
+import { Button } from "@drugfax/ui/components/ui/button";
 import {
   Table,
   TableBody,
@@ -21,7 +21,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@reclaim/ui/components/ui/table";
+} from "@drugfax/ui/components/ui/table";
 
 import { FdaLogo } from "./_assets/FdaLogo";
 import { DailyMed } from "./_assets/DailyMed";

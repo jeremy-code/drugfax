@@ -1,1 +1,1 @@
-export { default } from "@reclaim/eslint-config/react.js";
+export { default } from "@drugfax/eslint-config/react.js";

@@ -3,7 +3,7 @@ import { Slot, AccessibleIcon } from "radix-ui";
 import type { PrimitivePropsWithRef } from "radix-ui/internal";
 import type { ReactNode } from "react";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const Breadcrumb = ({
   asChild,

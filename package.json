@@ -1,5 +1,5 @@
 {
-  "name": "reclaim",
+  "name": "drugfax",
   "private": true,
   "scripts": {
     "prepare": "husky",
@@ -10,8 +10,8 @@
     "format:check": "prettier . --check"
   },
   "devDependencies": {
-    "@reclaim/eslint-config": "workspace:*",
-    "@reclaim/tsconfig": "workspace:*",
+    "@drugfax/eslint-config": "workspace:*",
+    "@drugfax/tsconfig": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",

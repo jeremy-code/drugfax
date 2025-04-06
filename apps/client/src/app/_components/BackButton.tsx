@@ -5,7 +5,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button, type ButtonProps } from "@reclaim/ui/components/ui/button";
+import { Button, type ButtonProps } from "@drugfax/ui/components/ui/button";
 
 export const BackButton = (props: ButtonProps) => {
   const router = useRouter();

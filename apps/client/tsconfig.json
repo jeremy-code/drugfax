@@ -1,5 +1,5 @@
 {
-  "extends": "@reclaim/tsconfig/tsconfig-nextjs",
+  "extends": "@drugfax/tsconfig/tsconfig-nextjs",
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
 

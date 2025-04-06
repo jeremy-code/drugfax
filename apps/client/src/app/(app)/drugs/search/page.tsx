@@ -1,7 +1,7 @@
-import { Input } from "@reclaim/ui/components/ui/input";
-import { Link } from "@reclaim/ui/components/ui/link";
-import { Label } from "@reclaim/ui/components/ui/label";
-import { Button } from "@reclaim/ui/components/ui/button";
+import { Input } from "@drugfax/ui/components/ui/input";
+import { Link } from "@drugfax/ui/components/ui/link";
+import { Label } from "@drugfax/ui/components/ui/label";
+import { Button } from "@drugfax/ui/components/ui/button";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 

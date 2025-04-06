@@ -7,10 +7,10 @@ settings:
 importers:
   .:
     devDependencies:
-      "@reclaim/eslint-config":
+      "@drugfax/eslint-config":
         specifier: workspace:*
         version: link:packages/eslint-config
-      "@reclaim/tsconfig":
+      "@drugfax/tsconfig":
         specifier: workspace:*
         version: link:packages/tsconfig
       husky:
@@ -37,7 +37,7 @@ importers:
       "@next/bundle-analyzer":
         specifier: ^15.2.4
         version: 15.2.4
-      "@reclaim/ui":
+      "@drugfax/ui":
         specifier: workspace:*
         version: link:../../packages/ui
       "@t3-oss/env-nextjs":
@@ -92,10 +92,10 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
-      "@reclaim/eslint-config":
+      "@drugfax/eslint-config":
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      "@reclaim/tsconfig":
+      "@drugfax/tsconfig":
         specifier: workspace:*
         version: link:../../packages/tsconfig
       "@types/node":
@@ -206,10 +206,10 @@ importers:
         specifier: ^2.6.0
         version: 2.6.0
     devDependencies:
-      "@reclaim/eslint-config":
+      "@drugfax/eslint-config":
         specifier: workspace:^
         version: link:../eslint-config
-      "@reclaim/tsconfig":
+      "@drugfax/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
       "@tailwindcss/typography":

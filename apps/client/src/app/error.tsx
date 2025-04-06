@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { HTTPError } from "ky";
-import { Button } from "@reclaim/ui/components/ui/button";
+import { Button } from "@drugfax/ui/components/ui/button";
 
 import { errorGraphic } from "#assets/error";
 import { Footer } from "#components/layout/Footer";

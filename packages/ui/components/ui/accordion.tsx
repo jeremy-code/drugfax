@@ -6,7 +6,7 @@ import {
 } from "radix-ui";
 import { ChevronDown } from "lucide-react";
 
-import { cn } from "@reclaim/ui/utils";
+import { cn } from "@drugfax/ui/utils";
 
 export const Accordion = ({
   className,

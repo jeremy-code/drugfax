@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { z } from "zod";
-import { Skeleton } from "@reclaim/ui/components/ui/skeleton";
+import { Skeleton } from "@drugfax/ui/components/ui/skeleton";
 
 import { DrugsTable } from "./drugsTable";
 

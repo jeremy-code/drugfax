@@ -28,7 +28,7 @@
      * @see {@link https://webpack.js.org/configuration/resolve/#resolveextensions}
      * @see {@link https://colinhacks.com/essays/live-types-typescript-monorepo}
      */
-    "customConditions": ["@reclaim/development"],
+    "customConditions": ["@drugfax/development"],
     "resolveJsonModule": true,
 
     /* Emit */

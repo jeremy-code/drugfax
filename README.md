@@ -1,10 +1,19 @@
-# reclaim [![GitHub Actions badge](https://github.com/jeremy-code/reclaim/actions/workflows/ci.yml/badge.svg)](https://github.com/jeremy-code/reclaim/actions/workflows/ci.yml)
+# drugfax
+
+<!-- Link references -->
+
+[github-actions]: https://www.github.com/jeremy-code/drugfax/actions/workflows/ci.yml
+[github-actions-badge]: https://www.github.com/jeremy-code/drugfax/actions/workflows/ci.yml/badge.svg
+[license-badge]: https://img.shields.io/github/license/jeremy-code/drugfax
+
+[![GitHub Actions][github-actions-badge]][github-actions]
+[![License][license-badge]](LICENSE)
 
 ## Installation
 
 ```shell
-git clone https://github.com/jeremy-code/reclaim.git
-cd reclaim
+git clone https://github.com/jeremy-code/drugfax.git
+cd drugfax
 corepack enable
 pnpm install
 ```
@@ -12,9 +21,6 @@ pnpm install
 ## Usage
 
 ```shell
-# Set Node.js version to the one specified in .nvmrc
-nvm use
-
 # Run the development server locally
 pnpm dev
 
@@ -28,4 +34,4 @@ pnpm build
 
 ## License
 
-This project is not licensed.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

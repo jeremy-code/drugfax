@@ -1,1 +1,1 @@
-export { default } from "@reclaim/eslint-config/next.js";
+export { default } from "@drugfax/eslint-config/next.js";
