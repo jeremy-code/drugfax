@@ -2,7 +2,7 @@
 import { z } from "zod";
 
 import { api } from "../api";
-import { ApplicationId } from "../schema";
+import { ApplicationId } from "../../schema";
 
 import {
   OpenFdaDrugsFdaApiResult,

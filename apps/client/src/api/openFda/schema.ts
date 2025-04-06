@@ -127,7 +127,7 @@ export type OpenFdaApiResult = z.infer<typeof OpenFdaApiResult>;
 /**
  * @see {@link https://open.fda.gov/apis/anatomy-of-a-response/}
  */
-export const OpenFdaApi = z
+export const OpenFdaApiResponse = z
   .object({
     meta: z
       .object({
@@ -149,4 +149,4 @@ export const OpenFdaApi = z
     results: z.array(OpenFdaApiResult),
   })
   .strict();
-export type OpenFdaApi = z.infer<typeof OpenFdaApi>;
+export type OpenFdaApi = z.infer<typeof OpenFdaApiResponse>;

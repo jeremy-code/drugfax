@@ -18,9 +18,6 @@ nvm use
 # Run the development server locally
 pnpm dev
 
-# Add UI components with shadcn/ui
-pnpm ui:add
-
 # Lint and format code with ESLint and Prettier
 pnpm lint
 pnpm format

@@ -27,7 +27,7 @@ import { FdaLogo } from "./_assets/FdaLogo";
 import { DailyMed } from "./_assets/DailyMed";
 
 import { ApplicationId } from "#api/openFda/schema";
-import { fetchDrugAction } from "#api/openFda/drugsFda/action";
+import { fetchDrugAction } from "#api/openFda/endspoints/drugsFda/action";
 import { dayjs } from "#utils/date";
 import { formatList } from "#utils/formatList";
 import { formatUrlWithSearchParams } from "#utils/formatUrlWithSearchParams";

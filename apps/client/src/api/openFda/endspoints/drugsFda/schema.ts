@@ -1,7 +1,11 @@
 import { z } from "zod";
 
-import { ApplicationNumber, OpenFdaApi, OpenFdaApiResult } from "../schema";
-import { ROUTES_OF_ADMINISTRATION, MAP_ERROR_TO_ROUTE } from "../constants";
+import {
+  ApplicationNumber,
+  OpenFdaApiResponse,
+  OpenFdaApiResult,
+} from "../../schema";
+import { ROUTES_OF_ADMINISTRATION, MAP_ERROR_TO_ROUTE } from "../../constants";
 
 import { NumericDate } from "#utils/schema";
 
@@ -148,7 +152,7 @@ export const OpenFdaDrugsFdaApiResult = OpenFdaApiResult.extend({
 });
 export type OpenFdaDrugsFdaApiResult = z.infer<typeof OpenFdaDrugsFdaApiResult>;
 
-export const OpenFdaDrugsFdaApi = OpenFdaApi.extend({
+export const OpenFdaDrugsFdaApi = OpenFdaApiResponse.extend({
   results: z.array(OpenFdaDrugsFdaApiResult),
 });
 export type OpenFdaDrugsFdaApi = z.infer<typeof OpenFdaDrugsFdaApi>;

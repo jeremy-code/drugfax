@@ -1,4 +1,3 @@
-import type { Dayjs } from "dayjs";
 import { getParsedType, z } from "zod";
 
 import { dayjs } from "./date";
@@ -21,7 +20,7 @@ export const NumericDate = z.coerce
   )
   .pipe(z.string().date());
 
-export const DayjsSchema = z.custom<Dayjs>(
+export const DayjsSchema = z.custom<dayjs.Dayjs>(
   (data) => dayjs.isDayjs(data),
   (input) => ({
     message: `Invalid type. Expected Dayjs, received ${getParsedType(input)}.`,

@@ -6,7 +6,6 @@ import reactCompiler from "eslint-plugin-react-compiler";
 import reactHooks from "eslint-plugin-react-hooks";
 import tailwind from "eslint-plugin-tailwindcss";
 import tseslint from "typescript-eslint";
-import pluginQuery from "@tanstack/eslint-plugin-query";
 
 import base from "./index.js";
 
@@ -17,7 +16,6 @@ export default tseslint.config(
   react.configs.flat.recommended,
   react.configs.flat["jsx-runtime"],
   importX.flatConfigs.react,
-  ...pluginQuery.configs["flat/recommended"],
   {
     name: "eslint-config/react.js",
     plugins: {

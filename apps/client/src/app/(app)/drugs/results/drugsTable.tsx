@@ -28,8 +28,8 @@ import {
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { useRouter } from "next/navigation";
 
-import type { Drug } from "#api/openFda/drugsFda/action";
-import type { Product } from "#api/openFda/drugsFda/schema";
+import type { Drug } from "#api/openFda/endspoints/drugsFda/action";
+import type { Product } from "#api/openFda/endspoints/drugsFda/schema";
 import { mode } from "#utils/mode";
 import { formatList } from "#utils/formatList";
 import { ColumnResizer } from "#components/table/ColumnResizer";
@@ -144,6 +144,7 @@ export const DrugsTable = ({
     aggregationFns: { mode: modeAggregationFn },
     enableMultiSort: true,
     isMultiSortEvent: () => true,
+    autoResetPageIndex: false,
   });
   const router = useRouter();
 
