@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentPropsWithRef } from "react";
-import * as SwitchPrimitives from "@radix-ui/react-switch";
+import { Switch as SwitchPrimitives } from "radix-ui";
 import type { ClassValue } from "class-variance-authority/types";
 import { cva, type VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";

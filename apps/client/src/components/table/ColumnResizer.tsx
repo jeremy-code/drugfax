@@ -1,8 +1,8 @@
 import { cn } from "@reclaim/ui/utils";
 import { type RowData, type Header as HeaderType } from "@tanstack/react-table";
 import type { CSSProperties } from "react";
-import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
-import { Slot, Slottable } from "@radix-ui/react-slot";
+import type { PrimitivePropsWithRef } from "radix-ui/internal";
+import { Slot } from "radix-ui";
 
 type ColumnResizerProps<TData extends RowData, TValue> = {
   header: HeaderType<TData, TValue>;
@@ -16,7 +16,7 @@ export const ColumnResizer = <TData extends RowData, TValue>({
   ...props
 }: ColumnResizerProps<TData, TValue>) => {
   const { table } = header.getContext();
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot.Root : "div";
 
   return (
     <Comp
@@ -62,7 +62,7 @@ export const ColumnResizer = <TData extends RowData, TValue>({
         aria-valuetext={`${header.column.getSize()} pixels`}
         readOnly
       />
-      <Slottable>{children}</Slottable>
+      <Slot.Slottable>{children}</Slot.Slottable>
     </Comp>
   );
 };

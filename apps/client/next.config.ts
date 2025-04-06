@@ -8,6 +8,8 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig = {
   poweredByHeader: false,
   experimental: {
+    // Not currently default, see https://github.com/vercel/next.js/pull/76065
+    optimizePackageImports: ["radix-ui", "radix-ui/internal"],
     webpackBuildWorker: true,
     reactCompiler: true,
   },

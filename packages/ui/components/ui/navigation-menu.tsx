@@ -1,11 +1,13 @@
 "use client";
 
 import type { ComponentPropsWithRef } from "react";
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import {
+  NavigationMenu as NavigationMenuPrimitive,
+  AccessibleIcon,
+  Slot,
+} from "radix-ui";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Slottable } from "@radix-ui/react-slot";
 
 import { cn } from "@reclaim/ui/utils";
 
@@ -20,7 +22,7 @@ export const NavigationMenu = ({
     className={cn("relative z-10 flex grow justify-center", className)}
     {...props}
   >
-    <Slottable>{children}</Slottable>
+    <Slot.Slottable>{children}</Slot.Slottable>
     <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
 );
@@ -34,7 +36,7 @@ export const NavigationMenuList = ({
     className={cn("m-0 flex justify-center gap-4 rounded-md p-1", className)}
     {...props}
   >
-    <Slottable>{children}</Slottable>
+    <Slot.Slottable>{children}</Slot.Slottable>
     <NavigationMenuIndicator />
   </NavigationMenuPrimitive.List>
 );
@@ -72,10 +74,10 @@ export const NavigationMenuTrigger = ({
       )}
       {...props}
     >
-      <Slottable>{children}</Slottable>
-      <AccessibleIcon label="Open menu">
+      <Slot.Slottable>{children}</Slot.Slottable>
+      <AccessibleIcon.Root label="Open menu">
         <ChevronDown className="relative top-px size-3 transition-transform duration-300 group-radix-state-open:rotate-180" />
-      </AccessibleIcon>
+      </AccessibleIcon.Root>
     </NavigationMenuPrimitive.Trigger>
   );
 };

@@ -1,7 +1,6 @@
-import { Slot, Slottable } from "@radix-ui/react-slot";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
-import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { Slot, AccessibleIcon } from "radix-ui";
+import type { PrimitivePropsWithRef } from "radix-ui/internal";
 import type { ReactNode } from "react";
 
 import { cn } from "@reclaim/ui/utils";
@@ -10,7 +9,7 @@ export const Breadcrumb = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"nav">) => {
-  const Comp = asChild ? Slot : "nav";
+  const Comp = asChild ? Slot.Root : "nav";
 
   return <Comp aria-label="breadcrumb" {...props} />;
 };
@@ -20,7 +19,7 @@ export const BreadcrumbList = ({
   className,
   ...props
 }: PrimitivePropsWithRef<"ol">) => {
-  const Comp = asChild ? Slot : "ol";
+  const Comp = asChild ? Slot.Root : "ol";
 
   return (
     <Comp
@@ -39,15 +38,15 @@ export const BreadcrumbItem = ({
   separator,
   ...props
 }: PrimitivePropsWithRef<"li"> & { separator?: ReactNode }) => {
-  const Comp = asChild ? Slot : "li";
-  const Separator = separator === undefined ? ChevronRight : Slot;
+  const Comp = asChild ? Slot.Root : "li";
+  const Separator = separator === undefined ? ChevronRight : Slot.Root;
 
   return (
     <>
       <Comp className={cn("inline-flex items-center", className)} {...props} />
       <li className="text-muted-foreground/80 last:hidden">
         <Separator className="size-3.5">
-          <Slottable>{separator}</Slottable>
+          <Slot.Slottable>{separator}</Slot.Slottable>
         </Separator>
       </li>
     </>
@@ -59,7 +58,7 @@ export const BreadcrumbLink = ({
   className,
   ...props
 }: PrimitivePropsWithRef<"a">) => {
-  const Comp = asChild ? Slot : "a";
+  const Comp = asChild ? Slot.Root : "a";
 
   return (
     <Comp
@@ -79,7 +78,7 @@ export const BreadcrumbCurrentLink = ({
   className,
   ...props
 }: PrimitivePropsWithRef<"span">) => {
-  const Comp = asChild ? Slot : "span";
+  const Comp = asChild ? Slot.Root : "span";
 
   return (
     <Comp
@@ -97,7 +96,7 @@ export const BreadcrumbEllipsis = ({
   children,
   ...props
 }: PrimitivePropsWithRef<"span">) => {
-  const Comp = asChild ? Slot : "span";
+  const Comp = asChild ? Slot.Root : "span";
 
   return (
     <Comp
@@ -106,10 +105,10 @@ export const BreadcrumbEllipsis = ({
       className={cn("flex size-9 items-center justify-center", className)}
       {...props}
     >
-      <AccessibleIcon label="more">
+      <AccessibleIcon.Root label="more">
         <MoreHorizontal className="size-4" />
-      </AccessibleIcon>
-      <Slottable>{children}</Slottable>
+      </AccessibleIcon.Root>
+      <Slot.Slottable>{children}</Slot.Slottable>
     </Comp>
   );
 };

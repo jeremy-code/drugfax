@@ -1,4 +1,4 @@
-import * as FormPrimitives from "@radix-ui/react-form";
+import { Form as FormPrimitives } from "radix-ui";
 import type { ComponentPropsWithRef } from "react";
 
 export const Form = (

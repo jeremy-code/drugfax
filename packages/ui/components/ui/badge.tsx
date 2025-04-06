@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
-import { Slot } from "@radix-ui/react-slot";
+import { Slot } from "radix-ui";
+import type { PrimitivePropsWithRef } from "radix-ui/internal";
 
 import { cn } from "@reclaim/ui/utils";
 
@@ -34,7 +34,7 @@ export const Badge = ({
   asChild,
   ...props
 }: BadgeProps) => {
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot.Root : "div";
 
   return (
     <Comp className={cn(badgeVariants({ variant, className }))} {...props} />

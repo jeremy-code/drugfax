@@ -1,5 +1,5 @@
-import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
-import { Slot } from "@radix-ui/react-slot";
+import { Slot } from "radix-ui";
+import type { PrimitivePropsWithRef } from "radix-ui/internal";
 
 import { cn } from "@reclaim/ui/utils";
 
@@ -8,7 +8,7 @@ export const Card = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"div">) => {
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot.Root : "div";
 
   return (
     <Comp
@@ -26,7 +26,7 @@ export const CardHeader = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"div">) => {
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot.Root : "div";
 
   return (
     <Comp
@@ -41,7 +41,7 @@ export const CardTitle = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"h3">) => {
-  const Comp = asChild ? Slot : "h1";
+  const Comp = asChild ? Slot.Root : "h1";
 
   return (
     <Comp
@@ -56,7 +56,7 @@ export const CardDescription = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"p">) => {
-  const Comp = asChild ? Slot : "p";
+  const Comp = asChild ? Slot.Root : "p";
 
   return (
     <Comp
@@ -71,7 +71,7 @@ export const CardContent = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"div">) => {
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot.Root : "div";
 
   return <Comp className={cn("p-6 pt-0", className)} {...props} />;
 };
@@ -81,7 +81,7 @@ export const CardFooter = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"div">) => {
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot.Root : "div";
 
   return (
     <Comp className={cn("flex items-center p-6 pt-0", className)} {...props} />

@@ -25,7 +25,7 @@ import {
   ArrowUpNarrowWide,
   ChevronRight,
 } from "lucide-react";
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { AccessibleIcon } from "radix-ui";
 import { useRouter } from "next/navigation";
 
 import type { Drug } from "#api/openFda/endspoints/drugsFda/action";
@@ -247,7 +247,7 @@ export const DrugsTable = ({
                             )}
                             onClick={row.getToggleExpandedHandler()}
                           >
-                            <AccessibleIcon
+                            <AccessibleIcon.Root
                               label={
                                 row.getIsExpanded() ? "Collapse" : "Expand"
                               }
@@ -258,7 +258,7 @@ export const DrugsTable = ({
                                   { "rotate-90": row.getIsExpanded() },
                                 )}
                               />
-                            </AccessibleIcon>
+                            </AccessibleIcon.Root>
                             <span className="shrink truncate text-left">
                               {flexRender(
                                 cell.column.columnDef.cell,

@@ -1,5 +1,5 @@
-import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
-import { Slot, Slottable } from "@radix-ui/react-slot";
+import type { PrimitivePropsWithRef } from "radix-ui/internal";
+import { Slot } from "radix-ui";
 import { ExternalLink } from "lucide-react";
 
 import { cn } from "@reclaim/ui/utils";
@@ -18,7 +18,7 @@ export const Link = ({
   children,
   ...props
 }: LinkProps) => {
-  const Comp = asChild ? Slot : "a";
+  const Comp = asChild ? Slot.Root : "a";
 
   return (
     <Comp
@@ -31,7 +31,7 @@ export const Link = ({
       {...(isExternal && { target: "_blank" })}
       {...props}
     >
-      <Slottable>{children}</Slottable>
+      <Slot.Slottable>{children}</Slot.Slottable>
       {isExternal && <ExternalLink className="size-[1em]" />}
     </Comp>
   );

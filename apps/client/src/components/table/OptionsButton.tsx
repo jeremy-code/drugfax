@@ -1,5 +1,5 @@
 import { EllipsisVertical } from "lucide-react";
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { AccessibleIcon } from "radix-ui";
 import { Button } from "@reclaim/ui/components/ui/button";
 import {
   DropdownMenu,
@@ -20,9 +20,9 @@ export const OptionsButton = <TData extends RowData, TValue>({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="size-6 cursor-pointer">
-          <AccessibleIcon label="Options">
+          <AccessibleIcon.Root label="Options">
             <EllipsisVertical size={16} />
-          </AccessibleIcon>
+          </AccessibleIcon.Root>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">

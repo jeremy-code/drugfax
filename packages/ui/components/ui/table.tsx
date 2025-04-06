@@ -1,5 +1,5 @@
-import { Slot } from "@radix-ui/react-slot";
-import type { PrimitivePropsWithRef } from "@radix-ui/react-primitive";
+import { Slot } from "radix-ui";
+import type { PrimitivePropsWithRef } from "radix-ui/internal";
 
 import { cn } from "@reclaim/ui/utils";
 
@@ -8,7 +8,7 @@ export const Table = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"table">) => {
-  const Comp = asChild ? Slot : "table";
+  const Comp = asChild ? Slot.Root : "table";
 
   return (
     <div className="w-fit max-w-full overflow-x-auto whitespace-nowrap rounded-md border">
@@ -28,7 +28,7 @@ export const TableBody = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"tbody">) => {
-  const Comp = asChild ? Slot : "tbody";
+  const Comp = asChild ? Slot.Root : "tbody";
 
   return <Comp className={cn("table-row-group", className)} {...props} />;
 };
@@ -38,7 +38,7 @@ export const TableCell = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"td">) => {
-  const Comp = asChild ? Slot : "td";
+  const Comp = asChild ? Slot.Root : "td";
 
   return (
     <Comp
@@ -58,7 +58,7 @@ export const TableFooter = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"tfoot">) => {
-  const Comp = asChild ? Slot : "tfoot";
+  const Comp = asChild ? Slot.Root : "tfoot";
 
   <Comp
     className={cn(
@@ -74,7 +74,7 @@ export const TableHeader = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"th">) => {
-  const Comp = asChild ? Slot : "th";
+  const Comp = asChild ? Slot.Root : "th";
 
   return (
     <Comp
@@ -100,7 +100,7 @@ export const TableHead = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"thead">) => {
-  const Comp = asChild ? Slot : "thead";
+  const Comp = asChild ? Slot.Root : "thead";
 
   return (
     <Comp
@@ -118,7 +118,7 @@ export const TableRow = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"tr">) => {
-  const Comp = asChild ? Slot : "tr";
+  const Comp = asChild ? Slot.Root : "tr";
 
   return (
     <Comp
@@ -139,7 +139,7 @@ export const TableCaption = ({
   asChild,
   ...props
 }: PrimitivePropsWithRef<"caption">) => {
-  const Comp = asChild ? Slot : "caption";
+  const Comp = asChild ? Slot.Root : "caption";
 
   return (
     <Comp

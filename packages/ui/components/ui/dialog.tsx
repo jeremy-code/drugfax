@@ -1,9 +1,8 @@
 "use client";
 
 import type { ComponentPropsWithRef } from "react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { AccessibleIcon, Dialog as DialogPrimitive } from "radix-ui";
 
 import { cn } from "@reclaim/ui/utils";
 
@@ -46,9 +45,9 @@ export const DialogContent = ({
       >
         {children}
         <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none radix-state-open:bg-accent radix-state-open:text-muted-foreground">
-          <AccessibleIcon label="Close">
+          <AccessibleIcon.Root label="Close">
             <X className="size-4" />
-          </AccessibleIcon>
+          </AccessibleIcon.Root>
         </DialogClose>
       </DialogPrimitive.Content>
     </DialogPortal>

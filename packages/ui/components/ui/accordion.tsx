@@ -1,8 +1,10 @@
 import type { ComponentPropsWithRef } from "react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import {
+  Accordion as AccordionPrimitive,
+  AccessibleIcon,
+  Slot,
+} from "radix-ui";
 import { ChevronDown } from "lucide-react";
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Slottable } from "@radix-ui/react-slot";
 
 import { cn } from "@reclaim/ui/utils";
 
@@ -40,10 +42,10 @@ export const AccordionTrigger = ({
       )}
       {...props}
     >
-      <Slottable>{children}</Slottable>
-      <AccessibleIcon label="Expand">
+      <Slot.Slottable>{children}</Slot.Slottable>
+      <AccessibleIcon.Root label="Expand">
         <ChevronDown className="size-4 text-muted-foreground transition-transform group-radix-state-open:rotate-180" />
-      </AccessibleIcon>
+      </AccessibleIcon.Root>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 );
@@ -58,7 +60,7 @@ export const AccordionContent = ({
     {...props}
   >
     <div className={cn("px-5 py-4", className)}>
-      <Slottable>{children}</Slottable>
+      <Slot.Slottable>{children}</Slot.Slottable>
     </div>
   </AccordionPrimitive.Content>
 );
