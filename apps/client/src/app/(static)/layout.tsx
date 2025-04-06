@@ -7,7 +7,9 @@ const StaticLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main className="container py-4">{children}</main>
+      <main className="container grid place-content-center py-4">
+        {children}
+      </main>
       <Footer />
     </>
   );
